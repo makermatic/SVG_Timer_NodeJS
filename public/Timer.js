@@ -17,12 +17,10 @@ class Timer {
         if (frameCount % 60 === 0 && this.amount > 0) {
             this.amount--
         }
-        console.log ("Going")
     }
 
     stop() {
         this.amount = this.amount + 0
-        console.log ("Stopped")
     }
 
     reset () {
