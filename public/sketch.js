@@ -15,7 +15,7 @@ function setup() {
   textFont(tFont)
   timer = new Timer(seconds, 500, "white")
 
-  socket = socket.io.connect('http://localhost:8080/')
+  socket = socket.io.connect('http://localhost:3000/')
   socket.on('keyCode', newThing)
 
   textFont(tFont)
