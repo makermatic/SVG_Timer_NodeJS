@@ -15,12 +15,12 @@ function setup() {
   textFont(tFont)
   timer = new Timer(seconds, 500, "white")
 
-  socket = socket.io.connect('http://localhost:3000/')
-  socket.on('keyCode', newThing)
-
   textFont(tFont)
   timer = new Timer(30, 500, "white")
 
+  //Socket Setup
+  socket = socket.io.connect('http://localhost:3000/')
+  socket.on('keyCode', newThing)
 }
 
 function draw() {
@@ -59,6 +59,18 @@ function keyTyped() {
 }
 
 function newThing(data) {
+  clear() //<-- transparent bg
+
+  //background/square setup 
+  fill("#9400FF")
+  stroke("white")
+  strokeWeight(3)
+  rect(0, 0, width, height)
+
+
+  timer.display()
+
+  //C key toggles timer
   if (keyTyped && keyCode === 67) {
     timer.go()
     //Any other key stops timer
