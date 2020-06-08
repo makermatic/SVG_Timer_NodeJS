@@ -20,7 +20,7 @@ function newConnection (socket) {
     socket.on ('keyCode', keyMsg)
 
     function keyMsg (data) {
-        socket.broadcast.emit ('keyCode', data)
-        console.log ("Server:", data)
+        socket.broadcast.emit ('keyCode', data);
+        console.log ("Server:", data);
     }
 }

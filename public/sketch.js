@@ -62,17 +62,6 @@ function keyTyped() {
 }
 
 function newMessage(data) {
-  clear() //<-- transparent bg
-
-  //background/square setup 
-  fill("#9400FF")
-  stroke("white")
-  strokeWeight(3)
-  rect(0, 0, width, height)
-
-
-  timer.display()
-
   //C key toggles timer
   if (keyTyped && keyCode === 67) {
     timer.go()
