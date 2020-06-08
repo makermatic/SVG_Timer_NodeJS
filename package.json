@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/makermatic/SVG-Timer.git"
+    "url": "git+https://github.com/makermatic/SVG_Timer_NodeJS.git"
   },
   "author": "zz",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/makermatic/SVG-Timer/issues"
+    "url": "https://github.com/makermatic/SVG-Timer_NodeJS/issues"
   },
-  "homepage": "https://github.com/makermatic/SVG-Timer#readme",
+  "homepage": "https://github.com/makermatic/SVG-Timer_NodeJSs#readme",
   "dependencies": {
     "express": "^4.17.1",
     "socket.io": "^1.4.5"
