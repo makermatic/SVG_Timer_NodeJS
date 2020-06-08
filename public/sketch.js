@@ -6,15 +6,12 @@ let tFont
 let fps = 60
 let seconds = 30
 
-let data
-
-
 function preload() {
   tFont = loadFont("assets/passion.otf")
 }
 
 function setup() {
-  data = keyCode
+
   createCanvas(600, 600)
   textFont(tFont)
   timer = new Timer(seconds, 500, "white")
@@ -24,7 +21,7 @@ function setup() {
 
   //Socket Setup
   socket = io.connect('http://localhost:3000/')
-  socket.on('keyCode', newThing)
+  socket.on('keyCode', newMessage)
 }
 
 function draw() {
@@ -53,13 +50,37 @@ function draw() {
 
 function keyTyped() {
   //empty function that gets called into memory
-  console.log(keyCode)
+  console.log("Client:", keyCode)
 
-//`data` variable was initially in this function
+  //`data` variable was initially in this function
+
+  var data = {
+    key: keyCode,
+  }
 
   socket.emit('keyCode', data)
 }
 
-function newThing(data) {
-  draw()
+function newMessage(data) {
+  clear() //<-- transparent bg
+
+  //background/square setup 
+  fill("#9400FF")
+  stroke("white")
+  strokeWeight(3)
+  rect(0, 0, width, height)
+
+
+  timer.display()
+
+  //C key toggles timer
+  if (keyTyped && keyCode === 67) {
+    timer.go()
+    //Any other key stops timer
+  } else if (keyTyped) {
+    timer.stop()
+  }
+  if (keyTyped && keyCode === 32) {
+    timer.reset()
+  }
 }

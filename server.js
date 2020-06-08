@@ -21,6 +21,6 @@ function newConnection (socket) {
 
     function keyMsg (data) {
         socket.broadcast.emit ('keyCode', data)
-        console.log (data)
+        console.log ("Server:", data)
     }
 }
