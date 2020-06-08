@@ -19,7 +19,7 @@ function setup() {
   timer = new Timer(30, 500, "white")
 
   //Socket Setup
-  socket = socket.io.connect('http://localhost:3000/')
+  socket = io.connect('http://localhost:3000/')
   socket.on('keyCode', newThing)
 }
 
