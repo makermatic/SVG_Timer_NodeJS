@@ -46,6 +46,8 @@ function draw() {
   if (keyTyped && keyCode === 32) {
     timer.reset()
   }
+
+  newMessage
 }
 
 function keyTyped() {
@@ -63,13 +65,13 @@ function keyTyped() {
 
 function newMessage(data) {
   //C key toggles timer
-  if (keyTyped && keyCode === 67) {
+  if (data.key === 67) {
     timer.go()
     //Any other key stops timer
-  } else if (keyTyped) {
+  } else {
     timer.stop()
   }
-  if (keyTyped && keyCode === 32) {
+  if (data.key === 32) {
     timer.reset()
   }
 }

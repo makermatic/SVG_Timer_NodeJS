@@ -15,8 +15,7 @@ io.sockets.on('connection', newConnection)
 
 function newConnection (socket) {
     console.log ('new connection:' + socket.id)
-    console.log (socket)
-
+    
     socket.on ('keyCode', keyMsg)
 
     function keyMsg (data) {
