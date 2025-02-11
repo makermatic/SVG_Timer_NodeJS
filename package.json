@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/makermatic/SVG-Timer_NodeJSs#readme",
   "dependencies": {
-    "express": "^4.17.3",
+    "express": "^4.21.2",
     "socket.io": "^2.4.0"
   }
 }
